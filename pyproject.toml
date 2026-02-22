@@ -6,3 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "blackwhale-proto"
 version = "1.0.0"
 dependencies = ["grpcio"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
