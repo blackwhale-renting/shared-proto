@@ -1,1 +1,8 @@
-s
+[build-system]
+requires = ["setuptools", "wheel", "grpcio-tools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blackwhale-proto"
+version = "1.0.0"
+dependencies = ["grpcio"]
