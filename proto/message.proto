@@ -3,12 +3,18 @@ syntax = "proto3";
 package message;
 
 message Image {
-    int32 identity = 1;
+    optional int32 frame_identity = 1;
     bytes data = 2;
 }
 
-message BallDetectionResult {
-    int32 identity = 1;
-    int32 xn = 2;
-    int32 yn = 3;
+message DetectedObject {
+    string label = 1;
+    float xn = 2;
+    float yn = 3;
+    float confidence = 4;
+}
+
+message DetectionResult {
+    int32 frame_identity = 1;
+    repeated DetectedObject objects = 2;
 }
