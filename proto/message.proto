@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package message;
+
+message Image {
+    int32 identity = 1;
+    bytes data = 2;
+}
+
+message BallDetectionResult {
+    int32 identity = 1;
+    int32 xn = 2;
+    int32 yn = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package service;
+import "message.proto";
+
+service BallTracking {
+    rpc detect(message.Image) returns (message.BallDetectionResult);
+    rpc detect_stream(stream message.Image) returns (stream message.BallDetectionResult);
+}
