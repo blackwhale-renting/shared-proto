@@ -14,8 +14,7 @@ class BuildProto(build_py):
         os.makedirs(package_name, exist_ok=True)
 
         with open(os.path.join(package_name, "__init__.py"), "w") as f:
-            # f.write(f"from . import message_pb2, message_pb2_grpc\n")
-            pass
+            f.write(f"import os, sys; sys.path.append(os.path.dirname(__file__));\n")
 
         for proto in proto_files:
             subprocess.check_call([
@@ -25,6 +24,7 @@ class BuildProto(build_py):
                 f"-I{cwd}/proto",
                 f"--python_out={package_name}",
                 f"--grpc_python_out={package_name}",
+                f"--mypy_out={package_name}",
                 proto,
             ])
 

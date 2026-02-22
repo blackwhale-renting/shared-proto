@@ -4,6 +4,5 @@ package service;
 import "message.proto";
 
 service BallTracking {
-    rpc detect(message.Image) returns (message.DetectionResult);
     rpc detect_stream(stream message.Image) returns (stream message.DetectionResult);
 }
