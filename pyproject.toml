@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "blackwhale-proto"
 version = "1.0.0"
-dependencies = ["grpcio"]
+dependencies = ["grpcio", "protobuf"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
